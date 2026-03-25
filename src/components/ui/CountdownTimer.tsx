@@ -31,7 +31,7 @@ export default function CountdownTimer({ targetDate }: CountdownTimerProps) {
     const target = new Date(targetDate).getTime();
 
     const calculateTimeLeft = () => {
-      const now = new Date().getTime();
+      const now = Date.now(); // Use Date.now() for better compatibility
       const difference = target - now;
 
       if (difference <= 0) {
@@ -57,7 +57,14 @@ export default function CountdownTimer({ targetDate }: CountdownTimerProps) {
 
     // Update every second
     const timer = setInterval(() => {
-      setTimeLeft(calculateTimeLeft());
+      const timeLeft = calculateTimeLeft();
+      setTimeLeft(timeLeft);
+      
+      // Check if expired
+      if (timeLeft.days === 0 && timeLeft.hours === 0 && timeLeft.minutes === 0 && timeLeft.seconds === 0) {
+        setIsExpired(true);
+        clearInterval(timer);
+      }
     }, 1000);
 
     return () => clearInterval(timer);

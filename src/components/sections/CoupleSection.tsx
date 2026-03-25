@@ -64,15 +64,17 @@ export default function CoupleSection({ config }: CoupleSectionProps) {
                 <span className="text-white text-lg md:text-xl">👦</span>
               </div>
             </div>
-            <h3 className="text-xl md:text-3xl font-bold text-gray-800 font-serif mb-2 break-words px-2">
-              {pria?.nama || 'Pengantin Pria'}
-            </h3>
-            <p className="text-gray-600 text-center text-sm md:text-base">
-              Putra dari
-            </p>
-            <p className="text-gray-700 font-medium text-center text-sm md:text-base px-2">
-              {pria?.namaOrtu || 'Bapak & Ibu'}
-            </p>
+            <div className="w-full max-w-xs mx-auto">
+              <h3 className="text-xl md:text-3xl font-bold text-gray-800 font-serif mb-2 break-words">
+                {pria?.nama || 'Pengantin Pria'}
+              </h3>
+              <p className="text-gray-600 text-center text-sm md:text-base">
+                Putra dari
+              </p>
+              <p className="text-gray-700 font-medium text-center text-sm md:text-base break-words">
+                {pria?.namaOrtu || 'Bapak & Ibu'}
+              </p>
+            </div>
           </motion.div>
 
           {/* Heart Separator */}
@@ -115,15 +117,17 @@ export default function CoupleSection({ config }: CoupleSectionProps) {
                 <span className="text-white text-lg md:text-xl">👧</span>
               </div>
             </div>
-            <h3 className="text-xl md:text-3xl font-bold text-gray-800 font-serif mb-2 break-words px-2">
-              {wanita?.nama || 'Pengantin Wanita'}
-            </h3>
-            <p className="text-gray-600 text-center text-sm md:text-base">
-              Putri dari
-            </p>
-            <p className="text-gray-700 font-medium text-center text-sm md:text-base px-2">
-              {wanita?.namaOrtu || 'Bapak & Ibu'}
-            </p>
+            <div className="w-full max-w-xs mx-auto">
+              <h3 className="text-xl md:text-3xl font-bold text-gray-800 font-serif mb-2 break-words">
+                {wanita?.nama || 'Pengantin Wanita'}
+              </h3>
+              <p className="text-gray-600 text-center text-sm md:text-base">
+                Putri dari
+              </p>
+              <p className="text-gray-700 font-medium text-center text-sm md:text-base break-words">
+                {wanita?.namaOrtu || 'Bapak & Ibu'}
+              </p>
+            </div>
           </motion.div>
         </div>
 
