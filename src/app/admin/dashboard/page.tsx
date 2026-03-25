@@ -603,6 +603,25 @@ function FlashbackManager({
 }) {
   const [editing, setEditing] = useState<string | null>(null);
   const [form, setForm] = useState({ judul: '', deskripsi: '', gambar: '', urutan: 0 });
+  const { uploading, upload } = useFileUpload();
+
+  const handleFlashbackUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+
+    if (file.size > 10 * 1024 * 1024) {
+      alert('Ukuran file maksimal 10MB');
+      return;
+    }
+
+    const result = await upload(file, 'images/flashback');
+    if (result.success && result.url) {
+      setForm({ ...form, gambar: result.url });
+      alert('File berhasil diupload!');
+    } else {
+      alert('Gagal upload: ' + result.error);
+    }
+  };
 
   const handleSubmit = async () => {
     if (editing) {
@@ -680,12 +699,7 @@ function FlashbackManager({
                 <input
                   type="file"
                   accept="image/*"
-                  onChange={(e) => {
-                    const file = e.target.files?.[0];
-                    if (file) {
-                      handleFileUpload(e, 'gambar');
-                    }
-                  }}
+                  onChange={handleFlashbackUpload}
                   className="hidden"
                 />
                 <span className="flex items-center justify-center gap-2 w-full p-2 border-2 border-gray-400 rounded-lg cursor-pointer hover:bg-emerald-50 transition-colors bg-white">
