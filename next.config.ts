@@ -1,9 +1,6 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  // Use src directory
-  appDir: true,
-  
   // Allow images from Cloudinary
   images: {
     remotePatterns: [
