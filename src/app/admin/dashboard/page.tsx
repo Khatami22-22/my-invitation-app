@@ -106,10 +106,7 @@ export default function AdminDashboard() {
 
     const result = await upload(file, folder);
     if (result.success && result.url) {
-      if (field === 'gambar') {
-        // Special case for flashback form
-        setForm((prev) => ({ ...prev, gambar: result.url! }));
-      } else if (subField) {
+      if (subField) {
         handleNestedChange(field as any, subField, result.url);
       } else {
         handleConfigChange(field, result.url);
