@@ -44,10 +44,10 @@ export default function CoupleSection({ config }: CoupleSectionProps) {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="flex flex-col items-center"
+            className="w-full md:w-auto flex flex-col items-center text-center"
           >
             <div className="relative mb-6">
-              <div className="w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-white shadow-xl">
+              <div className="w-40 h-40 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-white shadow-xl mx-auto">
                 {pria?.foto ? (
                   <img
                     src={pria.foto}
@@ -60,17 +60,17 @@ export default function CoupleSection({ config }: CoupleSectionProps) {
                   </div>
                 )}
               </div>
-              <div className="absolute -bottom-2 -right-2 w-12 h-12 bg-rose-500 rounded-full flex items-center justify-center shadow-lg">
-                <span className="text-white text-xl">👦</span>
+              <div className="absolute -bottom-2 -right-2 w-10 h-10 md:w-12 md:h-12 bg-rose-500 rounded-full flex items-center justify-center shadow-lg">
+                <span className="text-white text-lg md:text-xl">👦</span>
               </div>
             </div>
-            <h3 className="text-2xl md:text-3xl font-bold text-gray-800 font-serif mb-2">
+            <h3 className="text-xl md:text-3xl font-bold text-gray-800 font-serif mb-2 break-words px-2">
               {pria?.nama || 'Pengantin Pria'}
             </h3>
-            <p className="text-gray-600 text-center">
+            <p className="text-gray-600 text-center text-sm md:text-base">
               Putra dari
             </p>
-            <p className="text-gray-700 font-medium">
+            <p className="text-gray-700 font-medium text-center text-sm md:text-base px-2">
               {pria?.namaOrtu || 'Bapak & Ibu'}
             </p>
           </motion.div>
@@ -84,8 +84,8 @@ export default function CoupleSection({ config }: CoupleSectionProps) {
             className="flex-shrink-0"
           >
             <div className="relative">
-              <FaHeart className="w-12 h-12 md:w-16 md:h-16 text-rose-500 animate-pulse" />
-              <div className="absolute inset-0 w-12 h-12 md:w-16 md:h-16 bg-rose-300 rounded-full blur-xl opacity-50 animate-pulse" />
+              <FaHeart className="w-10 h-10 md:w-16 md:h-16 text-rose-500 animate-pulse" />
+              <div className="absolute inset-0 w-10 h-10 md:w-16 md:h-16 bg-rose-300 rounded-full blur-xl opacity-50 animate-pulse" />
             </div>
           </motion.div>
 
@@ -95,10 +95,10 @@ export default function CoupleSection({ config }: CoupleSectionProps) {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="flex flex-col items-center"
+            className="w-full md:w-auto flex flex-col items-center text-center"
           >
             <div className="relative mb-6">
-              <div className="w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-white shadow-xl">
+              <div className="w-40 h-40 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-white shadow-xl mx-auto">
                 {wanita?.foto ? (
                   <img
                     src={wanita.foto}
@@ -111,17 +111,17 @@ export default function CoupleSection({ config }: CoupleSectionProps) {
                   </div>
                 )}
               </div>
-              <div className="absolute -bottom-2 -right-2 w-12 h-12 bg-pink-500 rounded-full flex items-center justify-center shadow-lg">
-                <span className="text-white text-xl">👧</span>
+              <div className="absolute -bottom-2 -right-2 w-10 h-10 md:w-12 md:h-12 bg-pink-500 rounded-full flex items-center justify-center shadow-lg">
+                <span className="text-white text-lg md:text-xl">👧</span>
               </div>
             </div>
-            <h3 className="text-2xl md:text-3xl font-bold text-gray-800 font-serif mb-2">
+            <h3 className="text-xl md:text-3xl font-bold text-gray-800 font-serif mb-2 break-words px-2">
               {wanita?.nama || 'Pengantin Wanita'}
             </h3>
-            <p className="text-gray-600 text-center">
+            <p className="text-gray-600 text-center text-sm md:text-base">
               Putri dari
             </p>
-            <p className="text-gray-700 font-medium">
+            <p className="text-gray-700 font-medium text-center text-sm md:text-base px-2">
               {wanita?.namaOrtu || 'Bapak & Ibu'}
             </p>
           </motion.div>
